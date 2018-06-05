@@ -20,3 +20,8 @@ Please refer the figure prg2_circles_data.png to get an insight into the data.
 Here we can see that the accuracy reduces drastically to ~50%, as the data is not linearly spaced and its not easy for a single layer NN to classify the data. single layer NN can draw a straight line to divide the data.
 Please refer the figure prg2_circles_result.png to see the result.
 
+## prg3-MultilayerNN_circles.py
+
+Here in this program we add a new layer having 3 neurons to our previous NN. Our first hidden layer has 3 Neurons and uses tanh activation function. The output layer of this NN has a single neuron and uses sigmoid activation function. Here we can observe that our accuracy rises to 92%. By this approach we can observe that adding an extra layer would increase the accuracy by a great extent.
+You can examine the program by adding a new layer of neurons and playing around with different activation functions. But if we add more number layers we get into another problem called over fitting.
+Please refer the figure prg3_circles_result.png and observe how well our NN classifies the data.
