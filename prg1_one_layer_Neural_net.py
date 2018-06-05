@@ -1,19 +1,19 @@
 # create a simple neural network
-#defines a network that can seperate data from two blobs of data from different classes
+# defines a network that can seperate data from two blobs of data from different classes
 
+# we shall use the inbuilt module make_blobs from sklearn
 
-#we shall use the inbuilt module make_blobs from sklearn
+from sklearn.datasets import make_blobs # import make_blobs 
+import numpy as np # import numpy
+import matplotlib.pyplot as plt #import matplotlib
 
-from sklearn.datasets import make_blobs
-import numpy as np 
-import matplotlib.pyplot as plt
-
-# lets avoid the warning msgs
+# to avoid the warning msgs in the terminal
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
-#Helper functions
-
+###############################################################
+###########Functions###############
+###############################################################
 #To plot the data on a figure
 
 def plot_data(pl, X, y):
@@ -54,15 +54,15 @@ def plot_decision_boundary(model, X, y):
 # y is a [number of samples ] sized array . y[sample] contains the class index (i.e. 0 or 1 when there are 2 centres)
 # ex: y[0] = 0, y[1] = 1
 
-X, y = make_blobs(n_samples= 1000, centers=2, random_state = 42)
+X, y = make_blobs(n_samples= 1000, centers=2, random_state = 1)
 
 pl = plot_data(plt,X, y)
 pl.show()
 
 
-#split the data into training and test datasets
+# Split the data into training and test datasets
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state = 42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state = 1)
 
 #Create the keras model
 from keras.models import Sequential
