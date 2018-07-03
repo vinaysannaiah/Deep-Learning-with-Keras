@@ -72,11 +72,11 @@ pl.show()
 # Simple sequential model
 model = Sequential()
 #   Add a Dense Fully Connected Layer with 1 neuron.  Using input_shape = (2,) says the input will 
-#       be arrays of the form (*,2).  The first dimension will be an unspecified 
-#       number of batches (rows) of data.  The second dimension is 2 which are the X, Y positions of each data element.
-#       The sigmoid activation function is used to return 0 or 1, signifying the data 
-#       cluster the position is predicted to belong to.
-model.add(Dense(1, input_shape=(2,), activation="sigmoid"))
+#   be arrays of the form (*,2).  The first dimension will be an unspecified 
+#   number of batches (rows) of data.  The second dimension is 2 which are the X, Y positions of each data element.
+#   The sigmoid activation function is used to return 0 or 1, signifying the data 
+#   cluster the position is predicted to belong to.
+model.add(Dense(1, input_shape=(2,), activation="sigmoid")) # single Hidden layer
 
 # We define the model's learning process by calling the compile method
 #   Compile the model.  Minimize crossentopy for a binary.  Maximize for accuracy
