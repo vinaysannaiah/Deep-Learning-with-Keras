@@ -7,6 +7,15 @@ from sklearn.datasets import make_blobs # import make_blobs
 import numpy as np # import numpy
 import matplotlib.pyplot as plt #import matplotlib
 
+#Create the keras model
+from keras.models import Sequential # import the Sequential model from Keras
+from keras.layers import Dense # import Dense layers from keras
+from keras.optimizers import Adam # import Adam optimizer from Keras
+
+# Split the data into training and test datasets
+from sklearn.model_selection import train_test_split # import train_test_split to split the data into train and test
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state = 1) # 70%: train, 30 %: test
+
 # to avoid the warning msgs in the terminal
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
@@ -59,15 +68,6 @@ X, y = make_blobs(n_samples= 1000, centers=2, random_state = 1)
 pl = plot_data(plt,X, y)
 pl.show()
 
-
-# Split the data into training and test datasets
-from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state = 1)
-
-#Create the keras model
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.optimizers import Adam
 
 # Simple sequential model
 model = Sequential()
